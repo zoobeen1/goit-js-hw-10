@@ -1,22 +1,22 @@
 {
-  "name": "goit-js-hw-09",
+  "name": "goit-js-hw-10",
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://zoobeen1.github.io/goit-js-hw-09",
+  "homepage": "https://zoobeen1.github.io/goit-js-hw-10",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-09/"
+    "build": "parcel build src/*.html --public-url /goit-js-hw-10/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zoobeen1/goit-js-hw-09.git"
+    "url": "git+https://github.com/zoobeen1/goit-js-hw-10.git"
   },
   "keywords": [],
   "author": "Wladyslaw Zubin <zoobeen1@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zoobeen1/goit-js-hw-09/issues"
+    "url": "https://github.com/zoobeen1/goit-js-hw-10/issues"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.5",
@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "flatpickr": "^4.6.13",
+    "lodash.debounce": "^4.0.8",
     "notiflix": "^3.2.5"
   }
 }
