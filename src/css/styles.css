@@ -30,6 +30,9 @@ body {
   width: 30px;
   margin-right: 10px;
 }
+.card-lang + .card-lang::before {
+  content: ',';
+}
 .card-flag-name {
   height: 30px;
   display: flex;

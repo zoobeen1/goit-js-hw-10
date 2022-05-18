@@ -17,50 +17,27 @@ function clearHtml() {
   refs.countryList.innerHTML = '';
 }
 function onError(err) {
-  clearHtml();
   Notify.failure('Oops, there is no country with that name');
 }
 function renderCountryList(arr) {
-  clearHtml();
-  const list = arr.map(item => {
-    const listItem = document.createElement('li');
-    listItem.classList.add('list-item');
-    const text = document.createElement('p');
-    text.classList.add('list-text');
-    text.textContent = item.name;
-    const image = document.createElement('img');
-    image.classList.add('countri__flag');
-    image.src = item.flag;
-    image.alt = `flag of ${item.name}`;
-    listItem.append(image);
-    listItem.append(text);
-    return listItem;
-  });
-  refs.countryList.append(...list);
+  arr
+    .map(
+      item =>
+        `<li class='list-item'><img class='countri__flag' src='${item.flag}' alt='flag of ${item.name}'></img><p class='list-text'>${item.name}</p></li>`,
+    )
+    .map(item => refs.countryList.insertAdjacentHTML('beforeend', item));
 }
 function renderCountryInfo(country) {
-  clearHtml();
   //создаем основную разметку из шаблона
   const markup = countryCardTpl(country);
   refs.countryInfo.innerHTML = markup;
-  //создаем строку с языками
-  let languagesList = '';
-  country.languages.map(item => {
-    if (languagesList.length > 0) {
-      languagesList = languagesList + ', ';
-    }
-    languagesList = languagesList + item.name;
-  });
-  const langLine = `<b>Languages:</b> ${languagesList}`;
-  //вставляем строку с языками
-  const languageLine = document.querySelector('.card-text-line');
-  languageLine.innerHTML = langLine;
 }
 function onSearch(e) {
+  //очищаем экран
+  clearHtml();
   //убираем лишние пробелы, если они есть
   const searchSub = e.target.value.trim();
   if (searchSub.length < 1) {
-    clearHtml();
     return;
   }
   const countrySet = fetchCountries(searchSub);
