@@ -13,7 +13,7 @@ function clearHtml() {
   refs.countryInfo.innerHTML = '';
   refs.countryList.innerHTML = '';
 }
-function onError(err) {
+function onError() {
   Notify.failure('Oops, there is no country with that name');
 }
 function renderCountryList(arr) {
